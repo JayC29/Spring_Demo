@@ -12,7 +12,7 @@ public class Employee {
     private String First_Name;
 
     @Column(name="Last_Name")
-    private String LastName;
+    private String lastName;
     private String Email_Address;
     private String Phone_Number;
 
@@ -28,7 +28,7 @@ public class Employee {
                         , int Years_Experience, String Manager_Name, String Hashed_PW) {
 
         this.First_Name        = First_Name;
-        this.LastName         = Last_Name;
+        this.lastName         = Last_Name;
         this.Email_Address     = Email_Address;
         this.Phone_Number      = Phone_Number;
         this.Current_Job_Title = Current_Job_Title;
@@ -62,12 +62,12 @@ public class Employee {
         this.First_Name = first_Name;
     }
 
-    public String getLastName() {
-        return this.LastName;
+    public String getlastName() {
+        return this.lastName;
     }
 
-    public void setLastName(String last_Name) {
-        this.LastName = last_Name;
+    public void setlastName(String last_Name) {
+        this.lastName = last_Name;
     }
 
     public String getEmail_Address() {
