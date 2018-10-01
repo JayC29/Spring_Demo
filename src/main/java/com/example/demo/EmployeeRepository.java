@@ -11,4 +11,6 @@ public interface EmployeeRepository extends  CrudRepository<Employee, Long>{
     List<Employee> findAllByOrderByYearsExperienceDesc();
 
     List<Employee> findAllByEmailAddressContaining(String subtext);
+
+    List<Employee> removeByEmailAddressContaining(String subtext);
 }

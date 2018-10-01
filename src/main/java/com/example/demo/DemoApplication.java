@@ -48,6 +48,19 @@ public class DemoApplication {
 			for(Employee employees : repository.findAllByEmailAddressContaining("aol") ){
 				printEmployeeTable(employees);
 			}
+
+            //DELETE THE NEW GUY!
+            log.info("-------------------------------");
+            log.info("deleting employees by those containing aol emails...... ");
+            repository.removeByEmailAddressContaining("aol");
+
+
+            //search the database again and make sure he is out
+            log.info("-------------------------------");
+            log.info("Searching for new employee to make sure he is gone ");
+            for(Employee employees : repository.findAllByEmailAddressContaining("aol") ){
+                printEmployeeTable(employees);
+            }
 		};
 	}
 
