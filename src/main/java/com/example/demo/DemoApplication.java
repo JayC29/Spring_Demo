@@ -13,8 +13,10 @@ import org.springframework.context.annotation.Bean;
 public class DemoApplication {
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
-	public static void main(String[] args) {
+	//test employee to be added
+	Employee emp = new Employee("john", "Doe", "123@aol.com", "911", "student", 6, "jane doe", "password20");
 
+	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
@@ -24,23 +26,36 @@ public class DemoApplication {
 		return (args) -> {
 
 			// get all employees
-			log.info("employees found with findAll():");
+			log.info("\nemployees found with findAll():");
 			log.info("-------------------------------");
 			for (Employee employees : repository.findAll()) {
-				System.out.println("First Name: " + employees.getFirstName() + "\nLast Name: " + employees.getLastName() + "\nEmail: " + employees.getEmailAddress() + "\nPhone Number: " + employees.getPhoneNumber()
-						+ "\nCurrent Job Title: " + employees.getCurrentJobTitle() + "\nYears Experience: " +employees.getYearsExperience() + "\nManager Name: " + employees.getManagerName() + "\nHashed Password "
-						+ employees.getHashedPw() + "\n\n");
+				printEmployeeTable(employees);
 			}
-			log.info("-------------------------------");
 
 			// get all employees ordered by experience
+			log.info("-------------------------------");
 			log.info("employees by experience ");
 			for(Employee employees : repository.findAllByOrderByYearsExperienceDesc() ){
-				System.out.println("First Name: " + employees.getFirstName() + "\nLast Name: " + employees.getLastName() + "\nEmail: " + employees.getEmailAddress() + "\nPhone Number: " + employees.getPhoneNumber()
-						+ "\nCurrent Job Title: " + employees.getCurrentJobTitle() + "\nYears Experience: " +employees.getYearsExperience() + "\nManager Name: " + employees.getManagerName() + "\nHashed Password "
-						+ employees.getHashedPw() + "\n\n");
+				printEmployeeTable(employees);
+			}
+
+			//add an employee
+			repository.save(emp);
+
+			//check database for added employee
+			log.info("-------------------------------");
+			log.info("employees by those containing aol emails...... ");
+			for(Employee employees : repository.findAllByEmailAddressContaining("aol") ){
+				printEmployeeTable(employees);
 			}
 		};
+	}
+
+	//prints out values of employee attributes
+	public void printEmployeeTable(Employee employees){
+		System.out.println("First Name: " + employees.getFirstName() + "\nLast Name: " + employees.getLastName() + "\nEmail: " + employees.getEmailAddress() + "\nPhone Number: " + employees.getPhoneNumber()
+				+ "\nCurrent Job Title: " + employees.getCurrentJobTitle() + "\nYears Experience: " +employees.getYearsExperience() + "\nManager Name: " + employees.getManagerName() + "\nHashed Password "
+				+ employees.getHashedPw() + "\n\n");
 	}
 }
 
