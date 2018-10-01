@@ -38,7 +38,7 @@ public class DemoApplication {
 			log.info("-------------------------------");
 			for (Employee employee : repository.findAll()) {
 				System.out.println("First Name: " + employee.getFirst_Name() + "\nLast Name: " + employee.getLast_Name() + "\nEmail: " + employee.getEmail_Address() + "\nPhone Number: " + employee.getPhone_Number()
-					+ "\nCurrent Job Title: " + employee.getCurrent_Job_Title() + "\nYears Experience: " +employee.getYears_Experience() + "\nManager Name: " + employee.getManaager_Name() + "\nHashed Password "
+					+ "\nCurrent Job Title: " + employee.getCurrent_Job_Title() + "\nYears Experience: " +employee.getYears_Experience() + "\nManager Name: " + employee.getManager_Name() + "\nHashed Password "
 						+ employee.getHashed_PW() + "\n\n");
 			}
 			log.info("");
