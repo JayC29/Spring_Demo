@@ -7,107 +7,120 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
+    @Column(name="Employee_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long   Employee_ID;
-    private int    Years_Experience;
-    private String First_Name;
+    private Long   employeeId;
+
+    @Column(name="Years_Experience")
+    private int    yearsExperience;
+
+    @Column(name="First_Name")
+    private String firstName;
 
     @Column(name="Last_Name")
     private String lastName;
-    private String Email_Address;
-    private String Phone_Number;
 
+    @Column(name="Email_Address")
+    private String emailAddress;
 
+    @Column(name="Phone_Number")
+    private String phoneNumber;
 
-    private String Current_Job_Title;
-    private String Manager_Name;
-    private String Hashed_PW;
+    @Column(name="Current_Job_Title")
+    private String currentJobTitle;
+
+    @Column(name="Manager_Name")
+    private String managerName;
+
+    @Column(name="Hashed_PW")
+    private String HashedPw;
 
     protected Employee() {}
 
-    public Employee(String First_Name, String Last_Name, String Email_Address, String Phone_Number, String Current_Job_Title
-                        , int Years_Experience, String Manager_Name, String Hashed_PW) {
+    public Employee(String firstName, String lastName, String emailAddress, String phoneNumber, String currentJobTitle
+            , int yearsExperience, String managerName, String HashedPw) {
 
-        this.First_Name        = First_Name;
-        this.lastName         = Last_Name;
-        this.Email_Address     = Email_Address;
-        this.Phone_Number      = Phone_Number;
-        this.Current_Job_Title = Current_Job_Title;
-        this.Years_Experience  = Years_Experience;
-        this.Manager_Name     = Manager_Name;
-        this.Hashed_PW         = Hashed_PW;
+        this.firstName        = firstName;
+        this.lastName         = lastName;
+        this.emailAddress     = emailAddress;
+        this.phoneNumber      = phoneNumber;
+        this.currentJobTitle  = currentJobTitle;
+        this.yearsExperience  = yearsExperience;
+        this.managerName      = managerName;
+        this.HashedPw         = HashedPw;
 
     }
 
-    public Long getEmployee_ID() {
-        return this.Employee_ID;
+    //getter and setters for variables
+    public Long getEmployeeId() {
+        return this.employeeId;
     }
 
-    public void setEmployee_ID(Long employee_ID) {
-        this.Employee_ID = employee_ID;
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public int getYears_Experience() {
-        return this.Years_Experience;
+    public int getYearsExperience() {
+        return this.yearsExperience;
     }
 
-    public void setYears_Experience(int years_Experience) {
-        this.Years_Experience = years_Experience;
+    public void setYearsExperience(int years_Experience) {
+        this.yearsExperience = years_Experience;
     }
 
-    public String getFirst_Name() {
-        return this.First_Name;
+    public String getFirstName() {
+        return this.firstName;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.First_Name = first_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
-    public void setlastName(String last_Name) {
-        this.lastName = last_Name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getEmail_Address() {
-        return this.Email_Address;
+    public String getEmailAddress() {
+        return this.emailAddress;
     }
 
-    public void setEmail_Address(String email_Address) {
-        this.Email_Address = email_Address;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
-    public String getPhone_Number() {
-        return this.Phone_Number;
+    public String getPhoneNumber() {
+        return this.phoneNumber;
     }
 
-    public void setPhone_Number(String phone_Number) {
-        this.Phone_Number = phone_Number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getCurrent_Job_Title() {
-        return this.Current_Job_Title;
+    public String getCurrentJobTitle() {
+        return this.currentJobTitle;
     }
 
-    public void setCurrent_Job_Title(String current_Job_Title) {
-        this.Current_Job_Title = current_Job_Title;
+    public void setCurrentJobTitle(String currentJobTitle) {
+        this.currentJobTitle = currentJobTitle;
     }
 
-    public String getManager_Name() {
-        return this.Manager_Name;
+    public String getManagerName() {
+        return this.managerName;
     }
 
-    public void setManager_Name(String manaager_Name) {
-        this.Manager_Name = manaager_Name;
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
-    public String getHashed_PW() {
-        return this.Hashed_PW;
+    public String getHashedPw() {
+        return this.HashedPw;
     }
 
-    public void setHashed_PW(String hashed_PW) {
-        this.Hashed_PW = hashed_PW;
+    public void setHashedPw(String HashedPw) {
+        this.HashedPw = HashedPw;
     }
 }
