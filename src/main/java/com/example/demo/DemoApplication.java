@@ -18,19 +18,28 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	//TESTING OPERATIONS
 	@Bean
 	public CommandLineRunner demo(EmployeeRepository repository) {
 		return (args) -> {
 
-			// fetch all employees
-			log.info("Employees found with findAll():");
+			// get all employees
+			log.info("employees found with findAll():");
 			log.info("-------------------------------");
-			for (Employee Employees : repository.findAll()) {
-				System.out.println("First Name: " + Employees.getFirstName() + "\nLast Name: " + Employees.getLastName() + "\nEmail: " + Employees.getEmailAddress() + "\nPhone Number: " + Employees.getPhoneNumber()
-					+ "\nCurrent Job Title: " + Employees.getCurrentJobTitle() + "\nYears Experience: " +Employees.getYearsExperience() + "\nManager Name: " + Employees.getManagerName() + "\nHashed Password "
-						+ Employees.getHashedPw() + "\n\n");
+			for (Employee employees : repository.findAll()) {
+				System.out.println("First Name: " + employees.getFirstName() + "\nLast Name: " + employees.getLastName() + "\nEmail: " + employees.getEmailAddress() + "\nPhone Number: " + employees.getPhoneNumber()
+						+ "\nCurrent Job Title: " + employees.getCurrentJobTitle() + "\nYears Experience: " +employees.getYearsExperience() + "\nManager Name: " + employees.getManagerName() + "\nHashed Password "
+						+ employees.getHashedPw() + "\n\n");
 			}
-			log.info("");
+			log.info("-------------------------------");
+
+			// get all employees ordered by experience
+			log.info("employees by experience ");
+			for(Employee employees : repository.findAllByOrderByYearsExperienceDesc() ){
+				System.out.println("First Name: " + employees.getFirstName() + "\nLast Name: " + employees.getLastName() + "\nEmail: " + employees.getEmailAddress() + "\nPhone Number: " + employees.getPhoneNumber()
+						+ "\nCurrent Job Title: " + employees.getCurrentJobTitle() + "\nYears Experience: " +employees.getYearsExperience() + "\nManager Name: " + employees.getManagerName() + "\nHashed Password "
+						+ employees.getHashedPw() + "\n\n");
+			}
 		};
 	}
 }
