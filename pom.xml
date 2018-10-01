@@ -49,6 +49,11 @@
 
 <dependencies>
 
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-gcp-starter</artifactId>
+	</dependency>
+
 	<!-- Add CloudSQL Starter for MySQL -->
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>

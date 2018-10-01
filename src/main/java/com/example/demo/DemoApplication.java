@@ -49,6 +49,7 @@ public class DemoApplication {
 				printEmployeeTable(employees);
 			}
 
+			/*UNCOMMENT TO DELETE THE ENTRY
             //DELETE THE NEW GUY!
             log.info("-------------------------------");
             log.info("deleting employees by those containing aol emails...... ");
@@ -61,6 +62,7 @@ public class DemoApplication {
             for(Employee employees : repository.findAllByEmailAddressContaining("aol") ){
                 printEmployeeTable(employees);
             }
+            */
 		};
 	}
 
