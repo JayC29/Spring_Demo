@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -13,7 +10,9 @@ public class Employee {
     private Long   Employee_ID;
     private int    Years_Experience;
     private String First_Name;
-    private String Last_Name;
+
+    @Column(name="Last_Name")
+    private String LastName;
     private String Email_Address;
     private String Phone_Number;
 
@@ -29,7 +28,7 @@ public class Employee {
                         , int Years_Experience, String Manager_Name, String Hashed_PW) {
 
         this.First_Name        = First_Name;
-        this.Last_Name         = Last_Name;
+        this.LastName         = Last_Name;
         this.Email_Address     = Email_Address;
         this.Phone_Number      = Phone_Number;
         this.Current_Job_Title = Current_Job_Title;
@@ -63,12 +62,12 @@ public class Employee {
         this.First_Name = first_Name;
     }
 
-    public String getLast_Name() {
-        return this.Last_Name;
+    public String getLastName() {
+        return this.LastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.Last_Name = last_Name;
+    public void setLastName(String last_Name) {
+        this.LastName = last_Name;
     }
 
     public String getEmail_Address() {
