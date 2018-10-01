@@ -17,10 +17,10 @@ public class Employee {
     private String Email_Address;
     private String Phone_Number;
 
- 
+
 
     private String Current_Job_Title;
-    private String Manaager_Name;
+    private String Manager_Name;
     private String Hashed_PW;
 
     protected Employee() {}
@@ -34,7 +34,7 @@ public class Employee {
         this.Phone_Number      = Phone_Number;
         this.Current_Job_Title = Current_Job_Title;
         this.Years_Experience  = Years_Experience;
-        this.Manaager_Name     = Manager_Name;
+        this.Manager_Name     = Manager_Name;
         this.Hashed_PW         = Hashed_PW;
 
     }
@@ -95,12 +95,12 @@ public class Employee {
         this.Current_Job_Title = current_Job_Title;
     }
 
-    public String getManaager_Name() {
-        return this.Manaager_Name;
+    public String getManager_Name() {
+        return this.Manager_Name;
     }
 
-    public void setManaager_Name(String manaager_Name) {
-        this.Manaager_Name = manaager_Name;
+    public void setManager_Name(String manaager_Name) {
+        this.Manager_Name = manaager_Name;
     }
 
     public String getHashed_PW() {
