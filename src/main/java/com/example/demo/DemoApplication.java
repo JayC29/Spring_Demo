@@ -29,7 +29,7 @@ public class DemoApplication {
 			// fetch all employees
 			log.info("Employees found with findAll():");
 			log.info("-------------------------------");
-			for (Employee Employees : repository.findAll()) {
+			for (Employee Employees : repository.findAllByLastName("Smith")) {
 				System.out.println("First Name: " + Employees.getFirst_Name() + "\nLast Name: " + Employees.getlastName() + "\nEmail: " + Employees.getEmail_Address() + "\nPhone Number: " + Employees.getPhone_Number()
 					+ "\nCurrent Job Title: " + Employees.getCurrent_Job_Title() + "\nYears Experience: " +Employees.getYears_Experience() + "\nManager Name: " + Employees.getManager_Name() + "\nHashed Password "
 						+ Employees.getHashed_PW() + "\n\n");
