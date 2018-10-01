@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface EmployeeRepository extends  CrudRepository<Employee, Long>{
-    List<Employee> findByLastName(String lastName);
+    List<Employee> findAllByLastName(String LastName);
 }
